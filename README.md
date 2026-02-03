@@ -42,11 +42,11 @@ DAMIEN_DESSAUX_ECF2/
 │   ├── matrice_correlation.csv
 │   ├── anomalies_detectees.csv
 │   ├── figures/
+│   ├── logs/ <- logs de
 │   └── rapport_synthese.md
 ├── docker-compose.yaml
 ├── generate_data_ecf.py
 └── requirements.txt
-
 ```
 
 ## Prérequis
