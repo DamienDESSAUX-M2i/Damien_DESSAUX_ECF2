@@ -89,6 +89,15 @@ docker-compose up -d
 
 ## Utilisation
 
+Pour lancer la pipeline de traitement `02_nettoyage_spark` :
+
 ```bash
 docker exec -it spark-master /opt/spark/bin/spark-submit --master spark://spark-master:7077 /notebooks/02_nettoyage_spark.py
+```
+
+L'utilisation d'un notebook pour la partie `03_agregations_spark` m'a posé des difficultés.
+Pour générer le fichier Parquet `consommations_agregees`, lancez la pipeline de traitement `03_agregations_spark` :
+
+```bash
+docker exec -it spark-master /opt/spark/bin/spark-submit --master spark://spark-master:7077 /notebooks/03_agregations_spark.py
 ```

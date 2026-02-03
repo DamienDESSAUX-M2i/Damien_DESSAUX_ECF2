@@ -94,9 +94,9 @@ def main():
 
     logger.info("\n[4/4] Sauvegarde Parquet ...")
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    df_with_intensity.write.mode("overwrite").partitionBy(["type_energie"]).parquet(
-        "/output/consommations_agregees"
-    )
+    df_with_intensity.write.mode("overwrite").partitionBy(
+        ["date", "type_energie"]
+    ).parquet("/output/consommations_agregees")
 
     spark.stop()
 
