@@ -35,15 +35,17 @@ DAMIEN_DESSAUX_ECF2/
 │   └── 11_dashboard_executif.ipynb
 ├── output/
 │   ├── consommations_clean/
-│   ├── consommations_agregees.parquet
+│   ├── consommations_agregees/
 │   ├── meteo_clean.csv
 │   ├── consommations_enrichies.csv
 │   ├── consommations_enrichies.parquet
 │   ├── matrice_correlation.csv
-│   ├── anomalies_detectees.csv
-│   ├── figures/
-│   ├── logs/ <- logs de 02_nettoyage_spark
-│   ├── tableaux_synthese/ <- CSV de 06_statistiques_descriptives
+│   ├── pics_consommation.csv               <- Détection anomalies 08
+│   ├── sous_consommation.csv               <- Détection anomalies 08
+│   ├── dpe_errone.csv                      <- Détection anomalies 08
+│   ├── figures/                            <- Toutes les figures générées par les notebooks 09, 10 et 11
+│   ├── logs/                               <- logs de 02_nettoyage_spark et 03_aggregation_spark
+│   ├── tableaux_synthese/                  <- CSV de 06_statistiques_descriptives
 │   └── rapport_synthese.md
 ├── docker-compose.yaml
 ├── generate_data_ecf.py
