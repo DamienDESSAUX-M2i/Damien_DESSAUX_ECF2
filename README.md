@@ -89,14 +89,35 @@ docker-compose up -d
 
 ## Utilisation
 
-Pour lancer la pipeline de traitement `02_nettoyage_spark` :
+Pour lancer la pipeline de traitement `02_nettoyage_spark` utilisez la commande :
 
 ```bash
 docker exec -it spark-master /opt/spark/bin/spark-submit --master spark://spark-master:7077 /notebooks/02_nettoyage_spark.py
 ```
 
+### Erreurs Java
+
 L'utilisation d'un notebook pour la partie `03_agregations_spark` m'a posé des difficultés.
-Pour générer le fichier Parquet `consommations_agregees`, lancez la pipeline de traitement `03_agregations_spark` :
+En chargeant le fichier PARQUET `output/consommation_clean` via la la bibliotèque spark dans un notebook Jupyter comme suit,
+
+```python
+spark.read.parquet("../output/consommation_clean")
+```
+
+j'obtiens l'erreur suivante :
+
+```txt
+Py4JJavaError: An error occurred while calling o61.parquet.: java.lang.UnsatisfiedLinkError: 'boolean org.apache.hadoop.io.nativeio.NativeIO$Windows.access0(java.lang.String, int)'
+```
+
+J'ai essayé de charge le fichier PARQUET avec Pandas puis de créer un DataFrame Spark, cependant lors de l'exécution du notebook Jupyter, j'obtiens l'erreur suivante :
+
+```txt
+ConnectionRefusedError: [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+```
+
+Pour générer le fichier Parquet `consommations_agregees`, j'ai donc créé un script python `03_agregations_spark.py` à éxécuter dans le conteneur spark.
+Pour lancer la pipeline de traitement `03_agregations_spark`, utilisez la commande :
 
 ```bash
 docker exec -it spark-master /opt/spark/bin/spark-submit --master spark://spark-master:7077 /notebooks/03_agregations_spark.py
