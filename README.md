@@ -90,13 +90,20 @@ docker-compose up -d
 
 ## Utilisation
 
+### Scripts Jupyter
+
+Les fichiers `.ipynb` ne sont pas indépendants et doivent être lancé dans l'ordre numérique.
+Ces fichiers seront exécutés via `Jupyter lab` en veillant à sélectionner pour kernel l'environnment virtuel précédemment créé.
+
+### Pipelines de traitement
+
 Pour lancer la pipeline de traitement `02_nettoyage_spark` utilisez la commande :
 
 ```bash
 docker exec -it spark-master /opt/spark/bin/spark-submit --master spark://spark-master:7077 /notebooks/02_nettoyage_spark.py
 ```
 
-### Erreurs Java
+#### Erreurs Java
 
 L'utilisation d'un notebook pour la partie `03_agregations_spark` m'a posé des difficultés.
 En chargeant le fichier PARQUET `output/consommation_clean` via la la bibliotèque spark dans un notebook Jupyter comme suit,
