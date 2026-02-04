@@ -2,6 +2,22 @@
 
 ECF2 de la formation Développeur Concepteur en Science des Donnée de M2i.
 
+## Table of Contents
+ 
+- [ECF2 : Energie bâtiments](#ecf2--energie-bâtiments)
+  - [Table of Contents](#table-of-contents)
+  - [Description du projet](#description-du-projet)
+  - [Structure du projet](#structure-du-projet)
+  - [Prérequis](#prérequis)
+  - [Installation](#installation)
+    - [1. Cloner le projet depuis GitHub.](#1-cloner-le-projet-depuis-github)
+    - [2. Créer un environement virtuel et installer les dépendances.](#2-créer-un-environement-virtuel-et-installer-les-dépendances)
+    - [3. Démarrer l'infrastructure Docker.](#3-démarrer-linfrastructure-docker)
+  - [Utilisation](#utilisation)
+    - [Scripts Jupyter](#scripts-jupyter)
+    - [Pipelines de traitement](#pipelines-de-traitement)
+      - [Erreurs Java](#erreurs-java)
+
 ## Description du projet
 
 L'objectif du projet est de construire un pipeline complet d'ingestion, de nettoyage, d'analyse et de visualisation des donnees de consommation electrique, de gaz et d'eau, enrichies par les donnees meteorologiques et les caracteristiques des batiments.
