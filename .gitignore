@@ -1,7 +1,7 @@
 # ECF2
 data_ecf/
 output/
-
+correction/data/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
